@@ -1,4 +1,4 @@
-# THP JOUR 4 : PROJET KATA
+# THP JOUR 7
 
 
 ## 1. Project
@@ -16,7 +16,7 @@ $ cd ruby_j7
 ```ruby
 $ bundle install
 ```
-
+To verify the instalation, you must have a Gemfile.lock installer in the ruby_j7 file
 
 ## 3. Testing
 ```ruby
