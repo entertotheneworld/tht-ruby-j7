@@ -16,7 +16,7 @@ $ cd ruby_j7
 ```ruby
 $ bundle install
 ```
-To verify the instalation, you must have a Gemfile.lock installer in the ruby_j7 file
+To verify the installation you must have a Gemfile.lock file in the ruby_j7 folder
 
 ## 3. Testing
 ```ruby
