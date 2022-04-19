@@ -1,6 +1,13 @@
-def word_counter(string, d)
-    dictionnary = ["below", "down", "go", "going", "horn", "how", "howdy", "it", "i", "low", "own", "part", "partner", "sit"]
+aFile = File.new("shakespeare.txt", "r")
+size = File.size?( "shakespeare.txt" )
+content = aFile.sysread(size)
 
+dictionnary = ["the", "of", "and", "to", "a", "in", "for", "is", "on", "that", "by", "this", "with", "i", "you", "it", "not", "or", "be", "are"]
+
+
+def word_counter(string, d)
+    
+    dictionnary = ["the", "of", "and", "to", "a", "in", "for", "is", "on", "that", "by", "this", "with", "i", "you", "it", "not", "or", "be", "are"]
     if string.class == String
         counter = {}
         string = string.tr('.,\'!?":', '').downcase.split
@@ -25,3 +32,5 @@ def word_counter(string, d)
         return "Je ne prends que des chaines de caractere !"
     end
 end
+
+puts word_counter(content, dictionnary)
