@@ -1,19 +1,25 @@
-aFile = File.new("shakespeare.txt", "r")
-size = File.size?( "shakespeare.txt" )
-content = aFile.sysread(size)
+## Shakespeare
+file_shakespeare = File.new("shakespeare.txt", "r")
+size_shakespeare = File.size?( "shakespeare.txt" )
+content_shakespeare = file_shakespeare.sysread(size_shakespeare)
 
-dictionnary = ["the", "of", "and", "to", "a", "in", "for", "is", "on", "that", "by", "this", "with", "i", "you", "it", "not", "or", "be", "are"]
+## Gros mot
+file_swear_words = File.new("swearWords.txt", "r")
+size_swear_words = File.size?( "shakespeare.txt" )
+content_swear_words = file_swear_words.sysread(size_swear_words)
+@tab_swear_words = content_swear_words.split
+
+
 
 
 def word_counter(string, d)
     
-    dictionnary = ["the", "of", "and", "to", "a", "in", "for", "is", "on", "that", "by", "this", "with", "i", "you", "it", "not", "or", "be", "are"]
     if string.class == String
         counter = {}
         string = string.tr('.,\'!?":', '').downcase.split
 
         string.each {|word|
-            dictionnary.each{|word_dictionnary|
+            @tab_swear_words.each{|word_dictionnary|
                 if counter[word] && word == word_dictionnary
                     counter[word] += 1
                 elsif counter[word_dictionnary] && word.include?(word_dictionnary)
@@ -33,4 +39,4 @@ def word_counter(string, d)
     end
 end
 
-puts word_counter(content, dictionnary)
+puts word_counter(content_shakespeare, @tab_swear_words)
